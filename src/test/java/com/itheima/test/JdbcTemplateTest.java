@@ -24,10 +24,10 @@ public class JdbcTemplateTest {
     public void test1() throws PropertyVetoException {
         //创建数据源对象
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+        dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8");
         dataSource.setUser("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("123456");
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         //设置数据源对象  知道数据库在哪
